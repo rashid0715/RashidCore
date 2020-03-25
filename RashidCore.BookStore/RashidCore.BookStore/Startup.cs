@@ -26,6 +26,31 @@ namespace RashidCore.BookStore
                 app.UseDeveloperExceptionPage();
             }
 
+            #region CODE TO TEST FLOW OF PIPELINE REQUEST/RESPONSE
+            /* Below code is to test the flow of pipleline request/responses and use of next() method.
+            //add a custom middleware
+            app.Use(async (context,next)=> {
+                await context.Response.WriteAsync("#.Book Store - first of first... ");
+                await next();
+                await context.Response.WriteAsync("#.Book Store - second of first... ");
+
+            });
+                       
+            //add a custom middleware
+            app.Use(async (context, next) => {
+                await context.Response.WriteAsync("#.Book Store - fist of second... ");
+                await next();
+                await context.Response.WriteAsync("#.Book Store - scond of second... ");
+            });
+            
+            //add a custom middleware
+            app.Use(async (context, next) => {
+                await context.Response.WriteAsync("#.Book Store - fist of third... ");
+                await next();
+                    });
+            */
+            #endregion
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -33,6 +58,20 @@ namespace RashidCore.BookStore
                 endpoints.MapGet("/", async context =>
                 {
                     await context.Response.WriteAsync("Hello World!");
+                });
+
+                //MAKE SURE THAT THE ORDER OF MIDDLEWARES IS WRITTEN PROPERLY IN ORDER THEY NEED TO BE EXECUTED.
+                //endpoints.MapGet method is used to map only the GET requests.
+                endpoints.MapGet("/rashid", async context =>
+                {
+                    await context.Response.WriteAsync("Hello Rashid!");
+                });
+
+
+                //endpoints.Map is used to map both the GET and the POST requests.
+                endpoints.Map("/javed", async context =>
+                {
+                    await context.Response.WriteAsync("Hello Javed!");
                 });
             });
         }
