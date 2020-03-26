@@ -16,6 +16,10 @@ namespace RashidCore.BookStore
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,24 +59,61 @@ namespace RashidCore.BookStore
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
+            //endpoints.MapGet("/", async context =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+            //});
+
+            //MAKE SURE THAT THE ORDER OF MIDDLEWARES IS WRITTEN PROPERLY IN ORDER THEY NEED TO BE EXECUTED.
+            //endpoints.MapGet method is used to map only the GET requests.
+            endpoints.MapGet("/rashid", async context =>
+            {
+                await context.Response.WriteAsync("Hello Rashid!");
+            });
+
+
+            //endpoints.Map is used to map both the GET and the POST requests.
+            endpoints.Map("/env", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
+                    //check/display the environment name set in launchSettings.json
+                   // await context.Response.WriteAsync("Your working on : "+ env.EnvironmentName);
+
+                    if(env.IsDevelopment())
+                    {
+                        await context.Response.WriteAsync("\nYou are in Development");
+                    }
+                    else if (env.IsStaging())
+                    {
+                        await context.Response.WriteAsync("\nYou are in Staging");
+                    }
+                  else  if (env.IsProduction())
+                    {
+                        await context.Response.WriteAsync("\nYou are in Production");
+                    }
+                    else if (env.IsEnvironment("Testing"))//custom environment name
+                    {
+                        await context.Response.WriteAsync("\nYou are in Testing");
+                    }
+                    else 
+                    {
+                        await context.Response.WriteAsync("\nUnknown/custom environment");
+                    }
                 });
 
-                //MAKE SURE THAT THE ORDER OF MIDDLEWARES IS WRITTEN PROPERLY IN ORDER THEY NEED TO BE EXECUTED.
-                //endpoints.MapGet method is used to map only the GET requests.
-                endpoints.MapGet("/rashid", async context =>
-                {
-                    await context.Response.WriteAsync("Hello Rashid!");
-                });
 
-
-                //endpoints.Map is used to map both the GET and the POST requests.
-                endpoints.Map("/javed", async context =>
-                {
-                    await context.Response.WriteAsync("Hello Javed!");
-                });
+                //in order to use mvc, we have to tell application to use controllers
+                // Summary:
+                //     Adds endpoints for controller actions to the Microsoft.AspNetCore.Routing.IEndpointRouteBuilder
+                //     and adds the default route {controller=Home}/{action=Index}/{id?}.
+                //
+                // Parameters:
+                //   endpoints:
+                //     The Microsoft.AspNetCore.Routing.IEndpointRouteBuilder.
+                //
+                // Returns:
+                //     An Microsoft.AspNetCore.Builder.ControllerActionEndpointConventionBuilder for
+                //     endpoints associated with controller actions for this route.
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
