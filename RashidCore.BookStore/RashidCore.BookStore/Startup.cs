@@ -18,8 +18,17 @@ namespace RashidCore.BookStore
         {
             services.AddControllersWithViews();
 
+            //if we are developing web api, use AddControllers
+            //services.AddControllers();
 
+            //for working with razor pages use Add services.AddRazorPages();
+            //services.AddRazorPages();
 
+            //mor working on MVC Model (Model, Views and Controllers), use services.AddControllersWithViews();
+            //services.AddControllersWithViews();
+
+            //this is same as of AddControllersWithViews(), additionlay it uses the Page feature. if we really need Page feature, we will use AddMvc.
+            //services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,7 +74,7 @@ namespace RashidCore.BookStore
             //});
 
             //MAKE SURE THAT THE ORDER OF MIDDLEWARES IS WRITTEN PROPERLY IN ORDER THEY NEED TO BE EXECUTED.
-            //endpoints.MapGet method is used to map only the GET requests.
+            //endpoints.MapGet method is used to map only the GET requests. we can also use .Map() method
             endpoints.MapGet("/rashid", async context =>
             {
                 await context.Response.WriteAsync("Hello Rashid!");
