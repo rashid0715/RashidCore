@@ -31,6 +31,12 @@ namespace RashidCore.BookStore
 
             //this is same as of AddControllersWithViews(), additionlay it uses the Page feature. if we really need Page feature, we will use AddMvc.
             //services.AddMvc();
+
+            //#if DEBUG preprocessor will enable the runtime compilation only for dubug i.e. only for development environment
+            #if DEBUG
+            //enable run time compilation
+            services.AddRazorPages().AddRazorRuntimeCompilation();
+            #endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,14 +47,14 @@ namespace RashidCore.BookStore
                 app.UseDeveloperExceptionPage();
             }
 
-           
+
 
             //this method below will enable the static file from a specified folder outside wwwroot folder
             app.UseStaticFiles(new StaticFileOptions()
             {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(),"MyImages")),
-                RequestPath= "/MyImages"
-            }) ;
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "MyImages")),
+                RequestPath = "/MyImages"
+            });
 
             //this method below will enable the static files from wwwroot folder
             app.UseStaticFiles();
@@ -82,46 +88,46 @@ namespace RashidCore.BookStore
 
             app.UseEndpoints(endpoints =>
             {
-            //endpoints.MapGet("/", async context =>
-            //{
-            //    await context.Response.WriteAsync("Hello World!");
-            //});
+                //endpoints.MapGet("/", async context =>
+                //{
+                //    await context.Response.WriteAsync("Hello World!");
+                //});
 
-            //MAKE SURE THAT THE ORDER OF MIDDLEWARES IS WRITTEN PROPERLY IN ORDER THEY NEED TO BE EXECUTED.
-            //endpoints.MapGet method is used to map only the GET requests. we can also use .Map() method
-            endpoints.MapGet("/rashid", async context =>
-            {
-                await context.Response.WriteAsync("Hello Rashid!");
-            });
-
-
-            //endpoints.Map is used to map both the GET and the POST requests.
-            endpoints.Map("/env", async context =>
+                //MAKE SURE THAT THE ORDER OF MIDDLEWARES IS WRITTEN PROPERLY IN ORDER THEY NEED TO BE EXECUTED.
+                //endpoints.MapGet method is used to map only the GET requests. we can also use .Map() method
+                endpoints.MapGet("/rashid", async context =>
                 {
-                    //check/display the environment name set in launchSettings.json
-                   // await context.Response.WriteAsync("Your working on : "+ env.EnvironmentName);
-
-                    if(env.IsDevelopment())
-                    {
-                        await context.Response.WriteAsync("\nYou are in Development");
-                    }
-                    else if (env.IsStaging())
-                    {
-                        await context.Response.WriteAsync("\nYou are in Staging");
-                    }
-                  else  if (env.IsProduction())
-                    {
-                        await context.Response.WriteAsync("\nYou are in Production");
-                    }
-                    else if (env.IsEnvironment("Testing"))//custom environment name
-                    {
-                        await context.Response.WriteAsync("\nYou are in Testing");
-                    }
-                    else 
-                    {
-                        await context.Response.WriteAsync("\nUnknown/custom environment");
-                    }
+                    await context.Response.WriteAsync("Hello Rashid!");
                 });
+
+
+                //endpoints.Map is used to map both the GET and the POST requests.
+                endpoints.Map("/env", async context =>
+                    {
+                        //check/display the environment name set in launchSettings.json
+                        // await context.Response.WriteAsync("Your working on : "+ env.EnvironmentName);
+
+                        if (env.IsDevelopment())
+                        {
+                            await context.Response.WriteAsync("\nYou are in Development");
+                        }
+                        else if (env.IsStaging())
+                        {
+                            await context.Response.WriteAsync("\nYou are in Staging");
+                        }
+                        else if (env.IsProduction())
+                        {
+                            await context.Response.WriteAsync("\nYou are in Production");
+                        }
+                        else if (env.IsEnvironment("Testing"))//custom environment name
+                        {
+                            await context.Response.WriteAsync("\nYou are in Testing");
+                        }
+                        else
+                        {
+                            await context.Response.WriteAsync("\nUnknown/custom environment");
+                        }
+                    });
 
 
                 //in order to use mvc, we have to tell application to use controllers
