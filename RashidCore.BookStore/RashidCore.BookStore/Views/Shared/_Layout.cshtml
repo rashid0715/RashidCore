@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.js"></script>
+</head>
+<body class="container">
+    <div>
+        <a href="~/home/index">Index</a> | <a href="~/home/about">About</a> | <a href="~/home/privacy">Privacy</a> | <a href="~/Book/GetAllBooks">GetAllBooks</a>
+    </div>
+        <div>
+            @RenderBody();
+        </div>
+</body>
+</html>

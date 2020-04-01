@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 
 namespace RashidCore.BookStore
@@ -38,6 +40,18 @@ namespace RashidCore.BookStore
             {
                 app.UseDeveloperExceptionPage();
             }
+
+           
+
+            //this method below will enable the static file from a specified folder outside wwwroot folder
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(),"MyImages")),
+                RequestPath= "/MyImages"
+            }) ;
+
+            //this method below will enable the static files from wwwroot folder
+            app.UseStaticFiles();
 
             #region CODE TO TEST FLOW OF PIPELINE REQUEST/RESPONSE
             /* Below code is to test the flow of pipleline request/responses and use of next() method.

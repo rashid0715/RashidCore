@@ -16,11 +16,18 @@ namespace RashidCore.BookStore.Controllers
             _bookRepository = new BookRepository();
         }
 
-        public List<BookModel> GetAllBooks()
-        {
-            return _bookRepository.GetAllBooks();
-        }
+        //data from local list datasource
+        //public List<BookModel> GetAllBooks()
+        //{
+        //    return _bookRepository.GetAllBooks();
+        //}
 
+
+        public ViewResult GetAllBooks()
+        {
+            var data = _bookRepository.GetAllBooks();
+            return View();
+        }
 
         public BookModel GetBookById(int id)
         {
