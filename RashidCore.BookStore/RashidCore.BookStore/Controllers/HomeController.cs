@@ -18,12 +18,20 @@ namespace RashidCore.BookStore.Controllers
             return View();
         }
 
-
+          
         public ViewResult Privacy()
         {
             return View();
         }
+        public ViewResult Login()
+        {
+            return View();
+        }
+        public ViewResult Register()
+        {
+            return View();
+        }
 
-      
+
     }
 }

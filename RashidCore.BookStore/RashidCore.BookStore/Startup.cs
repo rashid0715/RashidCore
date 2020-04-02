@@ -59,6 +59,8 @@ namespace RashidCore.BookStore
             //this method below will enable the static files from wwwroot folder
             app.UseStaticFiles();
 
+
+
             #region CODE TO TEST FLOW OF PIPELINE REQUEST/RESPONSE
             /* Below code is to test the flow of pipleline request/responses and use of next() method.
             //add a custom middleware
@@ -142,6 +144,12 @@ namespace RashidCore.BookStore
                 // Returns:
                 //     An Microsoft.AspNetCore.Builder.ControllerActionEndpointConventionBuilder for
                 //     endpoints associated with controller actions for this route.
+
+                endpoints.MapControllerRoute(
+                   name: "default",
+                   pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
                 endpoints.MapDefaultControllerRoute();
             });
         }

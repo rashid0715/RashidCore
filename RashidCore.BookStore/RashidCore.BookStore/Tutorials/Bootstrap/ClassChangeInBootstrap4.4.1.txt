@@ -1,0 +1,32 @@
+﻿
+
+Following CSS classes was changed in latest version of Bootstrap 4 including navbar-toggleable-sm:
+
+.badge-default to .badge-dark
+.bg-faded to .bg-light
+.bg-inverse to .bg-dark
+.card-block to .card-body
+.card-outline-primary to .border-primary
+.card-outline-secondary to .border-secondary
+.card-outline-success to .border-success
+.card-outline-info to .border-info
+.card-outline-warning to .border-warning
+.card-primary to .bg-primary
+.card-success to .bg-success
+.card-info to .bg-info
+.card-warning to .bg-warning
+.card-danger to .bg-danger
+.hidden-xs-down to .d-none .d-sm-block
+.hidden-sm-down to .d-none .d-md-block
+.hidden-md-down to .d-none .d-lg-block
+.hidden-lg-down to .d-none .d-xl-block
+.hidden-xs-up to .d-none
+.hidden-sm-up to .d-sm-none
+.hidden-md-up to .d-md-none
+.hidden-lg-up to .d-lg-none
+.hidden-xl-up to .d-xl-none
+.navbar-toggleable-sm to .navbar-expand-sm
+.navbar-toggleable-md to .navbar-expand-md
+.navbar-toggleable-lg to .navbar-expand-lg
+.navbar-toggleable-xl to .navbar-expand-xl
+
