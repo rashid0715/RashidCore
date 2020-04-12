@@ -26,12 +26,13 @@ namespace RashidCore.BookStore.Controllers
         public ViewResult GetAllBooks()
         {
             var data = _bookRepository.GetAllBooks();
-            return View();
+            return View(data);
         }
 
-        public BookModel GetBookById(int id)
+        public ActionResult GetBookById(int id)
         {
-            return _bookRepository.GetBookById(id);
+            BookModel oBookModel=  _bookRepository.GetBookById(id);
+            return View(oBookModel);
         }
 
 
@@ -39,8 +40,6 @@ namespace RashidCore.BookStore.Controllers
         {
             return _bookRepository.SearchBooks(t, a);
         }
-
-
 
 
 

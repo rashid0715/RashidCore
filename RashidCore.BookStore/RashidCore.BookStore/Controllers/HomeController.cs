@@ -3,14 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using RashidCore.BookStore.Repository;
 
 namespace RashidCore.BookStore.Controllers
 {
+   
     public class HomeController : Controller
     {
+        private readonly BookRepository _bookRepository;
+        public HomeController()
+        {
+            _bookRepository = new BookRepository();
+        }
+
         public ViewResult Index()
         {
-            return View();
+            var data = _bookRepository.GetAllBooks();
+             return View(data);
+
+            //return View();
         }
 
         public ViewResult About()

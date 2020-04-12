@@ -1,0 +1,409 @@
+﻿
+@{
+    ViewData["Title"] = "TypoGraphy";
+    Layout = "~/Views/Shared/_LayoutBS.cshtml";
+}
+
+<h1>TypoGraphy</h1>
+<h3 class="text-center mb-3">Headings</h3>
+<div class="container rd-border2Blue">
+    <div class="row rd-border2Blue">
+        <div class="col-xl-5 rd-border2Red">
+            <h1>h1. Bootstrap heading</h1>
+            <h2>h2. Bootstrap heading</h2>
+            <h3>h3. Bootstrap heading</h3>
+            <h4>h4. Bootstrap heading</h4>
+            <h5>h5. Bootstrap heading</h5>
+            <h6>h6. Bootstrap heading</h6>
+        </div>
+        <div class="col-xl-6 rd-border2Red  offset-xl-1">
+            <p class="h1">h1. Bootstrap heading using < p class="h1" ></p>
+            <p class="h2">h2. Bootstrap heading  < p class="h2" ></p>
+            <p class="h3">h3. Bootstrap heading  < p class="h3" ></p>
+            <p class="h4">h4. Bootstrap heading  < p class="h4" ></p>
+            <p class="h5">h5. Bootstrap heading  < p class="h5" ></p>
+            <p class="h6">h6. Bootstrap heading  < p class="h6" ></p>
+        </div>
+    </div>
+</div>
+<hr />
+<h3 class="text-center mb-3">Customizing headings</h3>
+<div class="container rd-border2Blue">
+    <div class="row rd-border2Blue">
+        <div class="col-xl-5 rd-border2Red">
+
+            < h3 >
+            Fancy display heading
+            < small class="text-muted" >With faded secondary text< /small >
+            < /h3 ><br /><br />
+            <h3>
+                Fancy display heading
+                <small class="text-muted">With faded secondary text</small>
+            </h3>
+        </div>
+        <div class="col-xl-6 rd-border2Red  offset-xl-1">
+            < h1 class="display-1">Display 1
+            <h1 class="display-1">Display 1</h1><br /><br />
+
+            < h1 class="display-2">  Display 2
+            <h1 class="display-2">Display 2</h1><br /><br />
+
+            < h1 class="display-3">  Display 3
+            <h1 class="display-3">Display 3</h1><br /><br />
+
+            < h1 class="display-4">  Display 4
+            <h1 class="display-4">Display 4</h1>
+        </div>
+    </div>
+</div>
+
+<hr />
+<h3 class="text-center mb-3">Text Wrapping</h3>
+<div class="container rd-border2Blue">
+    <div class="row rd-border2Blue">
+        <div class="col-xl-12 rd-border2Red">
+            <div style="width:10rem" class="rd-bgCyan text-wrap">text with div width:10rem text-wrap</div>
+        </div>
+
+        <div class="col-xl-12 rd-border2Red">
+            <div style="width:10rem" class="rd-bgCyan text-nowrap">text with div width:10rem text-nowrap</div>
+        </div>
+
+        <div class="col-xl-12 rd-border2Red rd-bgDarkGrey">
+            <div style="width:10rem" class="badge badge-primary text-wrap">badge badge-primary text-wrap</div>
+        </div>
+
+        <div class="col-xl-12 rd-border2Red rd-bgDarkGrey">
+            <div style="width:10rem" class="badge badge-primary text-nowrap">badge badge-primary text-nowrap</div>
+        </div>
+        <div class="col-xl-12 rd-border2Red rd-bgDarkGrey">
+            <div style="width:10rem" class="badge badge-primary text-truncate">badge badge-primary text-truncate</div>
+        </div>
+
+        <div class="col-xl-12 rd-border2Red rd-bgDarkGrey">
+            <div style="max-width:10rem" class="d-inline-block  text-truncate rd-bgCyan">d-inline-block text-truncate</div>
+        </div>
+        <div class="col-xl-12 rd-border2Red rd-bgDarkGrey">
+            <!-- Inline level -->
+            <span class="d-inline-block text-truncate rd-bgPink" style="max-width: 150px;">
+                < span class d-inline-block text-truncate rd-bgPink
+            </span>
+        </div>
+
+        <div class="col-xl-12 rd-border2Red rd-bgDarkGrey">
+            <h3 class="text-center mb-3">Text Break</h3>
+            <br />Word break
+            Prevent long strings of text from breaking your components’ layout by using .text-break
+            to set overflow-wrap: break-word (and word-break: break-word for IE & Edge compatibility). <br />
+            < p class="text-break">This IsMyWordOneTwoThree< /p><br />
+            <div style="max-width:10rem" class="rd-bgCyan">
+                <p class="text-break">This IsMyWordOneTwoThree</p>
+            </div>
+        </div>
+        <div class="col-xl-12 rd-border2Red rd-bgDarkGrey">
+            <h3 class="text-center mb-3">Text transform</h3>
+            <br />Transform text in components with text capitalization classes.<br />
+            <div class="rd-bgCyan">
+                < p class="text-lowercase">LowerCased text.< /p><br />
+                <p class="text-lowercase">LowerCased text.</p><br />
+
+                < p class="text-uppercase">Uppercased text.< /p><br />
+                <p class="text-uppercase">Uppercased text.</p><br />
+
+                < p class="text-capitalize">CapiTaliZed text wiLL change onLY the FIRst Letter of each word in capital.< /p><br />
+                <p class="text-capitalize">CapiTaliZed text wiLL change onLY the FIRst Letter of each word in capital.</p><br /><br />
+            </div>
+        </div>
+
+        <div class="col-xl-12 rd-border2Red rd-bgDarkGrey">
+            <h3 class="text-center mb-3">Font weight and italics</h3>
+            <br />Transform text in components with text capitalization classes.<br />
+            <div class="rd-bgCyan">
+                <p class="font-weight-bold">Bold text. class="font-weight-bold"</p>
+                <p class="font-weight-bolder">Bolder weight text (relative to the parent element). class="font-weight-bolder"</p>
+                <p class="font-weight-normal">Normal weight text. class="font-weight-normal"></p>
+                <p class="font-weight-light">Light weight text. class="font-weight-light"</p>
+                <p class="font-weight-lighter">Lighter weight text (relative to the parent element). class="font-weight-lighter"</p>
+                <p class="font-italic">Italic text. class="font-italic"</p>
+                <p class="text-monospace">This is in monospace class="text-monospace"</p>
+            </div>
+        </div>
+
+        <div class="col-xl-12 rd-border2Red rd-bgDarkGrey">
+            <h3 class="text-center mb-3">Reset color</h3>
+            <br />Reset a text or link’s color with .text-reset, so that it inherits the color from its parent.<br />
+            <div class="rd-bgCyan">
+                <p>
+                    Muted text with a <a href="#" class="text-reset">reset link - < a href="#" class="text-reset" ></a>.
+                </p>
+                <p class="text-muted">
+                    Muted text with a <a href="#" class="text-reset">reset link - < a href="#" class="text-reset" ></a>.
+                </p>
+                <p class="text-muted">
+                    Muted text with a <a href="#">reset link - < a href="#" ></a>.
+                </p>
+            </div>
+
+            <h3 class="text-center mb-3">Text decoration none</h3>
+            <br />Remove a text decoration with a .text-decoration-none class.<br />
+            <div class="rd-bgCyan">
+                <a href="#" class="text-decoration-none">Non-underlined link < a href="#" class="text-decoration-none"></a><br />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<hr />
+<h3 class="text-center mb-3">Abbreviations | BLOCKQUOTE</h3>
+<div class="container rd-border2Blue">
+    <div class="row rd-border2Blue">
+        <h4>
+            Stylized implementation of HTML’s < abbr>
+            element for abbreviations and acronyms to show the expanded version on hover.
+            Abbreviations have a default underline and gain a help cursor to provide additional context on hover and to users of assistive technologies.
+            Add .initialism to an abbreviation for a slightly smaller font-size.
+        </h4>
+
+        <div class="col-xl-12 rd-border2Red">
+            < p>< abbr title="attribute">attr< /abbr>< /p>< br />
+            <p><abbr title="attribute">attr</abbr></p>
+        </div>
+
+        <div class="col-xl-12 rd-border2Red">
+            < p>< abbr title="HyperText Markup Language" class="initialism">HTML< /abbr>< /p>
+            <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
+        </div>
+        <div class="col-xl-12 rd-border2Red">
+            WITHOUT < BLOCKQUOTE> TAG<br />
+            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p><br /><br />
+            WITH < BLOCKQUOTE> TAG<br />
+            <blockquote class="blockquote">
+                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            </blockquote>
+        </div>
+
+        <div class="col-xl-12 rd-border2Red">
+            NAMING A SOURCE<br />Add a < footer class="blockquote-footer">
+            for identifying the source. Wrap the name of the source work in < cite>
+            <br />  <br />
+            < blockquote class="blockquote">  <br />
+            < p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.< /p>  <br />
+            < footer class="blockquote-footer">Someone famous in < cite title="Source Title">Source Title< /cite>< /footer>  <br />
+            < /blockquote>  <br />  <br />
+
+            <blockquote class="blockquote">
+                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            </blockquote>
+            <br />ALIGN CENTER<br />
+            <blockquote class="blockquote text-center">
+                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            </blockquote>
+            <br />ALIGN RIGHT<br />
+            <blockquote class="blockquote text-right">
+                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            </blockquote>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<hr />
+<h3 class="text-center mb-3">LIST</h3>
+<div class="container rd-border2Blue">
+    <div class="row rd-border2Blue">
+        <h4>
+            LIST UNSTYLED - <br />
+            Remove the default list-style and left margin on list items (immediate children only).
+            This only applies to immediate children list items, meaning you will need to add the class for any nested
+            lists as well.
+        </h4>
+
+        <div class="col-xl-12 rd-border2Red">
+            <ul class="list-unstyled">
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Consectetur adipiscing elit</li>
+                <li>Integer molestie lorem at massa</li>
+                <li>Facilisis in pretium nisl aliquet</li>
+                <li>
+                    Nulla volutpat aliquam velit
+                    <ul>
+                        <li>Phasellus iaculis neque</li>
+                        <li>Purus sodales ultricies</li>
+                        <li>Vestibulum laoreet porttitor sem</li>
+                        <li>Ac tristique libero volutpat at</li>
+                    </ul>
+                </li>
+                <li>Faucibus porta lacus fringilla vel</li>
+                <li>Aenean sit amet erat nunc</li>
+                <li>Eget porttitor lorem</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row rd-border2Blue">
+
+        <h4>
+            LIST INLINE - <br />
+            Remove a list’s bullets and apply some light margin with a combination of two classes, .list-inline
+            and .list-inline-item.
+        </h4>
+
+        <div class="col-xl-12 rd-border2Red">
+            <ul class="list-inline">
+                <li class="list-inline-item">Lorem ipsum</li>
+                <li class="list-inline-item">Phasellus iaculis</li>
+                <li class="list-inline-item">Nulla volutpat</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row rd-border2Blue">
+
+        <h4>
+            DESCRIPTION LIST - <br />
+            Align terms and descriptions horizontally by using our grid system’s predefined classes
+            (or semantic mixins).
+            For longer terms, you can optionally add a .text-truncate class to truncate the text with an ellipsis.
+        </h4>
+
+        <div class="col-xl-12 rd-border2Red">
+            <dl class="row">
+                <dt class="col-md-3">Description lists</dt>
+                <dd class="col-md-9">A description list is perfect for defining terms.</dd>
+
+                <dt class="col-md-3">Euismod</dt>
+                <dd class="col-md-9">
+                    <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>
+                    <p>Donec id elit non mi porta gravida at eget metus.</p>
+                </dd>
+
+                <dt class="col-md-3">Malesuada porta</dt>
+                <dd class="col-md-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+
+                <dt class="col-md-3 text-truncate">Truncated term is truncated long words</dt>
+                <dd class="col-md-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+
+                <dt class="col-md-3">Nesting</dt>
+                <dd class="col-md-9">
+                    <dl class="row">
+                        <dt class="col-md-4">Nested definition list</dt>
+                        <dd class="col-md-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
+                        <dt class="col-md-4">List item two</dt>
+                        <dd class="col-md-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
+                    </dl>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="row rd-border2Blue">
+        <h4>
+            RESPONSIVE FONT SIZE<br />
+            Bootstrap v4.3 ships with the option to enable responsive font sizes, allowing text to scale more naturally across device and viewport sizes. RFS can be enabled by changing the $enable-responsive-font-sizes Sass variable to true and recompiling Bootstrap.
+            <br /> <br />
+            To support RFS, we use a Sass mixin to replace our normal font-size properties. Responsive font sizes will be compiled into calc() functions with a mix of rem and viewport units to enable the responsive scaling behavior. More about RFS and its configuration can be found on its GitHub repository.
+        </h4>
+
+        <div class="col-xl-12 rd-border2Red ">
+            ...
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<hr />
+<h3 class="text-center mb-3">Color Utility</h3>
+<div class="container rd-border2Blue">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Text Color<br /></h3><hr />
+            <p class="text-primary">.text-primary</p>
+            <p class="text-secondary">.text-secondary</p>
+            <p class="text-success">.text-success</p>
+            <p class="text-danger">.text-danger</p>
+            <p class="text-warning">.text-warning</p>
+            <p class="text-info">.text-info</p>
+            <p class="text-light bg-dark">.text-light</p>
+            <p class="text-dark">.text-dark</p>
+            <p class="text-body">.text-body</p>
+            <p class="text-muted">.text-muted</p>
+            <p class="text-white bg-dark">.text-white</p>
+            <p class="text-black-50">.text-black-50</p>
+            <p class="text-white-50 bg-dark">.text-white-50</p>
+        </div>
+        <div class="col-md-6">
+            <h5>
+                Contextual text classes also work well on anchors with the provided hover and focus states. Note that
+                the .text-white and .text-muted class has no additional link styling beyond underline.
+            </h5> <hr />
+            <p><a href="#" class="text-primary">Primary link - class="text-primary"</a></p>
+            <p><a href="#" class="text-secondary">Secondary link - class="text-secondary"</a></p>
+            <p><a href="#" class="text-success">Success link</a></p>
+            <p><a href="#" class="text-danger">Danger link</a></p>
+            <p><a href="#" class="text-warning">Warning link</a></p>
+            <p><a href="#" class="text-info">Info link</a></p>
+            <p><a href="#" class="text-light bg-dark">Light link</a></p>
+            <p><a href="#" class="text-dark">Dark link</a></p>
+            <p><a href="#" class="text-muted">Muted link</a></p>
+            <p><a href="#" class="text-white bg-dark">White link</a></p>
+        </div>
+    </div>
+</div>
+
+
+<hr />
+<h3 class="text-center mb-3">Background Color Utility</h3>
+<div class="container rd-border2Blue">
+    <h5>
+        Similar to the contextual text color classes, easily set the background of an element to any contextual class.
+        Anchor components will darken on hover, just like the text classes. Background utilities do not set color, so in some cases you’ll want to use .text-* utilities.
+    </h5>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+            <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
+            <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+            <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+            <div class="p-3 mb-2 bg-warning text-dark">.bg-warning</div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-3 mb-2 bg-info text-white">.bg-info</div>
+            <div class="p-3 mb-2 bg-light text-dark">.bg-light</div>
+            <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
+            <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+            <div class="p-3 mb-2 bg-transparent text-dark">.bg-transparent</div>
+        </div>
+    </div>
+</div>
+
+
+
+<hr />
+<h3 class="text-center mb-3 bg-danger">Background Gradient Utility - NOT WORKING - TBD</h3>
+<div class="container rd-border2Blue">
+    <h5>
+        When $enable-gradients is set to true (default is false), you can use .bg-gradient- utility classes.
+        Learn about our Sass options to enable these classes and more.
+    </h5>
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="p-3 mb-2 .bg-gradient-primary text-dark">.bg-gradient-primary - NOT WORKING. NEED $enable-gradients  set to true IN SAAS OPTIONS</div>
+        </div>
+        <div class="col-md-6">
+
+            <div class="p-3 mb-2 .bg-gradient-primary text-dark">.bg-gradient-primary - NOT WORKING. NEED $enable-gradients  set to true IN SAAS OPTIONS</div>
+        </div>
+    </div>
+</div>
+
+

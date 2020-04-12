@@ -27,14 +27,23 @@ namespace RashidCore.BookStore.Repository
         private List<BookModel> BookDataSource()
         {
             List<BookModel> oList = new List<BookModel>(){
-            new BookModel(){Id=101, StrAuthor="Rashid",StrTitle="Mr. James Hook"},
-            new BookModel(){Id=102, StrAuthor="Rashid",StrTitle="Harry Potter"},
-            new BookModel(){Id=103, StrAuthor="Rashid",StrTitle="Gaban"},
-            new BookModel(){Id=104, StrAuthor="Rashid",StrTitle="Bankelal ka kamal"},
-            new BookModel(){Id=105, StrAuthor="Rashid",StrTitle="Junior jii"}
+            new BookModel(){Id=101, StrAuthor="Rashid",StrTitle="Mr. James Hook", StrDescription="This is the description for book Id 101. This is the description for book Id 101. This is the description for book Id 101. This is the description for book Id 101. This is the description for book Id 101. This is the description for book Id 101. This is the description for book Id 101. ",
+                intPages=123,StrCategory="Action",StrLanguage="English"},
+
+            new BookModel(){Id=102, StrAuthor="Javed",StrTitle="Harry Potter", StrDescription="This is the description for book Id 102.",
+            intPages=203,StrCategory="Fantasy",StrLanguage="Spanish"},
+
+            new BookModel(){Id=103, StrAuthor="Ansari",StrTitle="Gaban", StrDescription="This is the description for book Id 103.",
+            intPages=80,StrCategory="Classic",StrLanguage="Hindi"},
+
+            new BookModel(){Id=104, StrAuthor="Amit",StrTitle="Bankelal ka kamal", StrDescription="This is the description for book Id 104.",
+            intPages=91,StrCategory="Comedy",StrLanguage="Hindi"},
+
+            new BookModel(){Id=105, StrAuthor="Nanda",StrTitle="Junior jii", StrDescription="This is the description for book Id 105.",
+            intPages=66,StrCategory="Sci-Fi",StrLanguage="English"}
         };
-            
             return oList;
+
         }
     }
 }
