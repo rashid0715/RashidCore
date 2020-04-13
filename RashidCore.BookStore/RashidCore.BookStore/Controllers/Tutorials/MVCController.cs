@@ -6,15 +6,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RashidCore.BookStore.Controllers.Tutorials
 {
-    public class EFController : Controller
+    public class MVCController : Controller
     {
-        public IActionResult EFIndex()
+        public IActionResult MVCIndex()
         {
             return View();
         }
-        public string abc()
+
+        public IActionResult ViewBagViewData()
         {
-            return "abc";
+            return View();
         }
     }
 }

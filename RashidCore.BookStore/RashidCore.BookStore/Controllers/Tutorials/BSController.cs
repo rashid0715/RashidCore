@@ -8,7 +8,7 @@ namespace RashidCore.BookStore.Controllers.Tutorials
 {
     public class BSController : Controller
     {
-        public IActionResult Index()
+        public IActionResult BSIndex()
         {
             return View();
         }

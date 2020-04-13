@@ -1,22 +1,60 @@
-﻿@using RashidCore.BookStore.Models
+﻿
 @model IEnumerable<BookModel>
 @*@model IEnumerable<RashidCore.BookStore.Models.BookModel>*@
 
 
 @section BreadCrumb{
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="~/home/about">About</a></li>
-        <li class="breadcrumb-item"><a href="~/home/privacy">Privacy</a></li>
-    </ol>
-</nav>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="~/home/about">About</a></li>
+            <li class="breadcrumb-item"><a href="~/home/privacy">Privacy</a></li>
+        </ol>
+    </nav>
 }
 
+@{
+    <!--Pass title with ViewData from this view to layout file-->
+    ViewData["Title"] = "Welcome to Rashid Book Store";
+
+    <!--Cast ViewBag object into a dynamic object so we can use it's properties. remember, these are dynamic properties
+        hence it will not show any compile time error even if you type incorrect properly name -->
+    dynamic oStrData2 = ViewBag.StrData2;
+
+    <!--Cast ViewData object into a dynamic object so we can use it's properties. remember, these are dynamic properties
+    hence it will not show any compile time error even if you type incorrect properly name -->
+    var oViewData = ViewData["oObjectFromViewData"] as BookModel;
+}
 <section class="jumbotron text-center">
     <div class="container">
-        <h1>Book Store Home - Index</h1>
+        <h1>
+            <!--access viewbag property from controller -->
+            Book Store Home - Index<br />
+
+        </h1>
         <p class="lead text-muted">
+            <!--access viewbag property from controller -->
+            ViewBag.StrTitle - @ViewBag.StrTitle<br />
+            <!--access viewbag array from controller -->
+            ViewBag.StrData: @ViewBag.StrData<br />
+
+            <!--access viewbag array anonymous properties (individual array elements) from controller -->
+            oStrData2.Id: @oStrData2.Id<br />
+            oStrData2.Id: @oStrData2.StrName<br />
+
+            <!--access viewbag object from controller -->
+            ViewBag.oObject.Id=@ViewBag.oObject.Id<br />
+            ViewBag.oObject.StrTitle=@ViewBag.oObject.StrTitle<br />
+
+
+            <!--access ViewData property from controller -->
+            ViewData["StrTitleFromViewData"] - @ViewData["StrTitleFromViewData"]<br />
+
+            <!--access ViewData object from controller -->
+            oViewData.Id =@oViewData.Id <br />
+            oViewData.intPages =@oViewData.intPages <br />
+            oViewData.intPages =@oViewData.StrTitle <br />
+
             This is just test text. This is just test text. This is just test text. This is just test text. This is just test text.
             This is just test text.This is just test text.This is just test text.This is just test text.
         </p>
@@ -59,7 +97,7 @@
 @section CustomScripts{
     <script type="text/javascript">
         $(document).ready(function () {
-           // alert('hi');
+            // alert('hi');
         });
     </script>
 }

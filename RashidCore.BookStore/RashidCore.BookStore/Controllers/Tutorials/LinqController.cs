@@ -9,7 +9,7 @@ namespace RashidCore.BookStore.Controllers.Tutorials
 {
     public class LinqController : Controller
     {
-        public IActionResult Index()
+        public IActionResult LinqIndex()
         {
             return View();
         }
